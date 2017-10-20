@@ -1,5 +1,5 @@
 # project: cj6javz3b00di0165aejar9as
-# version: 3
+# version: 5
 
 type File @model {
   contentType: String!
@@ -12,9 +12,10 @@ type File @model {
   url: String! @isUnique
 }
 
-type Item @model {
+type Post @model {
   id: ID! @isUnique
-  text: String!
+  description: String!
+  imageUrl: String!
 }
 
 type User @model {
