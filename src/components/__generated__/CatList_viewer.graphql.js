@@ -61,7 +61,7 @@ const fragment /*: ConcreteFragment*/ = {
               "selections": [
                 {
                   "kind": "FragmentSpread",
-                  "name": "Cat_cat",
+                  "name": "CatContainer_cat",
                   "args": null
                 }
               ],

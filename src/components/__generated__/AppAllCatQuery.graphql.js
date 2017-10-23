@@ -1,6 +1,6 @@
 /**
  * @flow
- * @relayHash f291ee59ec27a7df5a90c39e181dff6f
+ * @relayHash 0a52d1d20cc461bd73b0e1123cb93926
  */
 
 /* eslint-disable */
@@ -27,7 +27,7 @@ fragment CatList_viewer on Viewer {
   allCats(last: 3) {
     edges {
       node {
-        ...Cat_cat
+        ...CatContainer_cat
         id
       }
     }
@@ -47,7 +47,7 @@ fragment CatList_viewer on Viewer {
   }
 }
 
-fragment Cat_cat on Cat {
+fragment CatContainer_cat on Cat {
   id
   nickname
   fullName
@@ -282,7 +282,7 @@ const batch /*: ConcreteBatch*/ = {
       }
     ]
   },
-  "text": "query AppAllCatQuery {\n  viewer {\n    ...CatList_viewer\n    id\n  }\n}\n\nfragment CatList_viewer on Viewer {\n  allCats(last: 3) {\n    edges {\n      node {\n        ...Cat_cat\n        id\n      }\n    }\n    ... on CatConnection {\n      edges {\n        cursor\n        node {\n          __typename\n          id\n        }\n      }\n      pageInfo {\n        hasPreviousPage\n        startCursor\n      }\n    }\n  }\n}\n\nfragment Cat_cat on Cat {\n  id\n  nickname\n  fullName\n  imageUrl\n  isFollowed\n}\n"
+  "text": "query AppAllCatQuery {\n  viewer {\n    ...CatList_viewer\n    id\n  }\n}\n\nfragment CatList_viewer on Viewer {\n  allCats(last: 3) {\n    edges {\n      node {\n        ...CatContainer_cat\n        id\n      }\n    }\n    ... on CatConnection {\n      edges {\n        cursor\n        node {\n          __typename\n          id\n        }\n      }\n      pageInfo {\n        hasPreviousPage\n        startCursor\n      }\n    }\n  }\n}\n\nfragment CatContainer_cat on Cat {\n  id\n  nickname\n  fullName\n  imageUrl\n  isFollowed\n}\n"
 };
 
 module.exports = batch;

@@ -8,7 +8,7 @@
 
 /*::
 import type {ConcreteFragment} from 'relay-runtime';
-export type Cat_cat = {|
+export type CatContainer_cat = {|
   +id: string;
   +nickname: string;
   +fullName: ?string;
@@ -22,7 +22,7 @@ const fragment /*: ConcreteFragment*/ = {
   "argumentDefinitions": [],
   "kind": "Fragment",
   "metadata": null,
-  "name": "Cat_cat",
+  "name": "CatContainer_cat",
   "selections": [
     {
       "kind": "ScalarField",

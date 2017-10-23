@@ -20,7 +20,6 @@ class App extends Component {
         environment={environment}
         query={AppAllCatsQuery}
         render={({ error, props }) => {
-          console.log(props);
           if (error) {
             return <div>{error.message}</div>;
           } else if (props) {
