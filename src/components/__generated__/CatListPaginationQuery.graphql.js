@@ -1,6 +1,6 @@
 /**
  * @flow
- * @relayHash c709c67cdadfc440918a54fa09cbffaf
+ * @relayHash 3667cd91ea746f182a9c783882b86195
  */
 
 /* eslint-disable */
@@ -9,14 +9,14 @@
 
 /*::
 import type {ConcreteBatch} from 'relay-runtime';
-export type AppAllCatQueryResponse = {|
+export type CatListPaginationQueryResponse = {|
   +viewer: {| |};
 |};
 */
 
 
 /*
-query AppAllCatQuery(
+query CatListPaginationQuery(
   $count: Int!
   $cursor: String
 ) {
@@ -77,7 +77,7 @@ const batch /*: ConcreteBatch*/ = {
     ],
     "kind": "Fragment",
     "metadata": null,
-    "name": "AppAllCatQuery",
+    "name": "CatListPaginationQuery",
     "selections": [
       {
         "kind": "LinkedField",
@@ -101,7 +101,7 @@ const batch /*: ConcreteBatch*/ = {
   "id": null,
   "kind": "Batch",
   "metadata": {},
-  "name": "AppAllCatQuery",
+  "name": "CatListPaginationQuery",
   "query": {
     "argumentDefinitions": [
       {
@@ -118,7 +118,7 @@ const batch /*: ConcreteBatch*/ = {
       }
     ],
     "kind": "Root",
-    "name": "AppAllCatQuery",
+    "name": "CatListPaginationQuery",
     "operation": "query",
     "selections": [
       {
@@ -323,7 +323,7 @@ const batch /*: ConcreteBatch*/ = {
       }
     ]
   },
-  "text": "query AppAllCatQuery(\n  $count: Int!\n  $cursor: String\n) {\n  viewer {\n    ...CatList_viewer\n    id\n  }\n}\n\nfragment CatList_viewer on Viewer {\n  allCats(first: $count, after: $cursor) {\n    edges {\n      node {\n        ...CatContainer_cat\n        id\n      }\n    }\n    ... on CatConnection {\n      edges {\n        cursor\n        node {\n          __typename\n          id\n        }\n      }\n      pageInfo {\n        endCursor\n        hasNextPage\n      }\n    }\n  }\n}\n\nfragment CatContainer_cat on Cat {\n  id\n  nickname\n  fullName\n  imageUrl\n  isFollowed\n}\n"
+  "text": "query CatListPaginationQuery(\n  $count: Int!\n  $cursor: String\n) {\n  viewer {\n    ...CatList_viewer\n    id\n  }\n}\n\nfragment CatList_viewer on Viewer {\n  allCats(first: $count, after: $cursor) {\n    edges {\n      node {\n        ...CatContainer_cat\n        id\n      }\n    }\n    ... on CatConnection {\n      edges {\n        cursor\n        node {\n          __typename\n          id\n        }\n      }\n      pageInfo {\n        endCursor\n        hasNextPage\n      }\n    }\n  }\n}\n\nfragment CatContainer_cat on Cat {\n  id\n  nickname\n  fullName\n  imageUrl\n  isFollowed\n}\n"
 };
 
 module.exports = batch;

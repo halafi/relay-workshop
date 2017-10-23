@@ -6,7 +6,7 @@ import environment from '../Environment';
 import CatList from './CatList';
 
 const AppAllCatsQuery = graphql`
-  query AppAllCatQuery {
+  query AppAllCatQuery($count: Int!, $cursor: String) {
     viewer {
       ...CatList_viewer
     }
@@ -19,6 +19,7 @@ class App extends Component {
       <QueryRenderer
         environment={environment}
         query={AppAllCatsQuery}
+        variables={{ count: 1 }}
         render={({ error, props }) => {
           if (error) {
             return <div>{error.message}</div>;

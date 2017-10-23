@@ -19,14 +19,25 @@ export type CatList_viewer = {|
 
 
 const fragment /*: ConcreteFragment*/ = {
-  "argumentDefinitions": [],
+  "argumentDefinitions": [
+    {
+      "kind": "RootArgument",
+      "name": "count",
+      "type": "Int"
+    },
+    {
+      "kind": "RootArgument",
+      "name": "cursor",
+      "type": "String"
+    }
+  ],
   "kind": "Fragment",
   "metadata": {
     "connection": [
       {
-        "count": null,
-        "cursor": null,
-        "direction": "backward",
+        "count": "count",
+        "cursor": "cursor",
+        "direction": "forward",
         "path": [
           "allCats"
         ]
@@ -122,14 +133,14 @@ const fragment /*: ConcreteFragment*/ = {
                   "kind": "ScalarField",
                   "alias": null,
                   "args": null,
-                  "name": "hasPreviousPage",
+                  "name": "endCursor",
                   "storageKey": null
                 },
                 {
                   "kind": "ScalarField",
                   "alias": null,
                   "args": null,
-                  "name": "startCursor",
+                  "name": "hasNextPage",
                   "storageKey": null
                 }
               ],
