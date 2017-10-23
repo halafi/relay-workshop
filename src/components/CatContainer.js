@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { createFragmentContainer, graphql } from 'react-relay';
 
 import updateCat from '../mutations/updateCat';
+import deleteCat from '../mutations/deleteCat';
 
 import Cat from './Cat';
 
@@ -9,8 +10,17 @@ class CatContainer extends Component {
   toggleFollow = () => {
     updateCat(this.props.cat.id, !this.props.cat.isFollowed);
   };
+  handleDelete = () => {
+    deleteCat(this.props.viewerId, this.props.cat.id);
+  };
   render() {
-    return <Cat cat={this.props.cat} toggleFollow={this.toggleFollow} />;
+    return (
+      <Cat
+        cat={this.props.cat}
+        toggleFollow={this.toggleFollow}
+        handleDelete={this.handleDelete}
+      />
+    );
   }
 }
 

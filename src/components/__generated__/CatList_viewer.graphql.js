@@ -9,6 +9,7 @@
 /*::
 import type {ConcreteFragment} from 'relay-runtime';
 export type CatList_viewer = {|
+  +id: string;
   +allCats: {|
     +edges: ?$ReadOnlyArray<?{|
       +node: {| |};
@@ -46,6 +47,13 @@ const fragment /*: ConcreteFragment*/ = {
   },
   "name": "CatList_viewer",
   "selections": [
+    {
+      "kind": "ScalarField",
+      "alias": null,
+      "args": null,
+      "name": "id",
+      "storageKey": null
+    },
     {
       "kind": "LinkedField",
       "alias": "allCats",

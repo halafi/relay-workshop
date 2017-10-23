@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Cat = ({ cat, toggleFollow }) => (
+const Cat = ({ cat, toggleFollow, handleDelete }) => (
   <article className="dt w-100 bb b--black-05 pb2 mt2" href="#0">
     <div className="dtc w2 w3-ns v-mid">
       <img
@@ -24,6 +24,12 @@ const Cat = ({ cat, toggleFollow }) => (
             : 'black-60'} `}
         >
           {cat.isFollowed ? 'Following' : '+ Follow'}
+        </button>{' '}
+        <button
+          onClick={handleDelete}
+          className="f6 button-reset bg-dark-red white ba b--black-10 dim pointer pv1"
+        >
+          Kick out
         </button>
       </div>
     </div>

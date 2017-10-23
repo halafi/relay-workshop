@@ -8,6 +8,7 @@ import CatList from './CatList';
 const AppAllCatsQuery = graphql`
   query AppAllCatQuery($count: Int!, $cursor: String) {
     viewer {
+      id
       ...CatList_viewer
     }
   }
