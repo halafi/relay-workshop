@@ -20,7 +20,7 @@ export default createFragmentContainer(
   CatList,
   graphql`
     fragment CatList_viewer on Viewer {
-      allCats(last: 100) @connection(key: "CatList_allCats", filters: []) {
+      allCats(last: 3) @connection(key: "CatList_allCats", filters: []) {
         edges {
           node {
             ...Cat_cat

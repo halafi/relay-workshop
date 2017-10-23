@@ -46,6 +46,8 @@
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "relay": "relay-compiler --src ./src --schema ./schema.graphql",
+    "schema":
+      "get-graphql-schema https://api.graph.cool/relay/v1/relay-workshop > ./schema.graphql",
     "test": "node scripts/test.js --env=jsdom"
   },
   "devDependencies": {

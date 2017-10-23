@@ -1,6 +1,6 @@
 /**
  * @flow
- * @relayHash e3506a31855008aa82003360c3eb0f66
+ * @relayHash f291ee59ec27a7df5a90c39e181dff6f
  */
 
 /* eslint-disable */
@@ -24,7 +24,7 @@ query AppAllCatQuery {
 }
 
 fragment CatList_viewer on Viewer {
-  allCats(last: 100) {
+  allCats(last: 3) {
     edges {
       node {
         ...Cat_cat
@@ -118,7 +118,7 @@ const batch /*: ConcreteBatch*/ = {
                   {
                     "kind": "Literal",
                     "name": "last",
-                    "value": 100,
+                    "value": 3,
                     "type": "Int"
                   }
                 ],
@@ -257,7 +257,7 @@ const batch /*: ConcreteBatch*/ = {
                     ]
                   }
                 ],
-                "storageKey": "allCats{\"last\":100}"
+                "storageKey": "allCats{\"last\":3}"
               },
               {
                 "kind": "LinkedHandle",
@@ -266,7 +266,7 @@ const batch /*: ConcreteBatch*/ = {
                   {
                     "kind": "Literal",
                     "name": "last",
-                    "value": 100,
+                    "value": 3,
                     "type": "Int"
                   }
                 ],
@@ -282,7 +282,7 @@ const batch /*: ConcreteBatch*/ = {
       }
     ]
   },
-  "text": "query AppAllCatQuery {\n  viewer {\n    ...CatList_viewer\n    id\n  }\n}\n\nfragment CatList_viewer on Viewer {\n  allCats(last: 100) {\n    edges {\n      node {\n        ...Cat_cat\n        id\n      }\n    }\n    ... on CatConnection {\n      edges {\n        cursor\n        node {\n          __typename\n          id\n        }\n      }\n      pageInfo {\n        hasPreviousPage\n        startCursor\n      }\n    }\n  }\n}\n\nfragment Cat_cat on Cat {\n  id\n  nickname\n  fullName\n  imageUrl\n  isFollowed\n}\n"
+  "text": "query AppAllCatQuery {\n  viewer {\n    ...CatList_viewer\n    id\n  }\n}\n\nfragment CatList_viewer on Viewer {\n  allCats(last: 3) {\n    edges {\n      node {\n        ...Cat_cat\n        id\n      }\n    }\n    ... on CatConnection {\n      edges {\n        cursor\n        node {\n          __typename\n          id\n        }\n      }\n      pageInfo {\n        hasPreviousPage\n        startCursor\n      }\n    }\n  }\n}\n\nfragment Cat_cat on Cat {\n  id\n  nickname\n  fullName\n  imageUrl\n  isFollowed\n}\n"
 };
 
 module.exports = batch;

@@ -24,10 +24,14 @@ class Cat extends React.Component {
         <div className="dtc v-mid">
           <form className="w-100 tr">
             <button
-              className="f6 button-reset bg-white ba b--black-10 dim pointer pv1 black-60"
-              type="submit"
+              className={`f6 button-reset ${this.props.cat.isFollowed
+                ? 'bg-blue'
+                : 'bg-white'} ba b--black-10 dim pointer pv1 ${this.props.cat
+                .isFollowed
+                ? 'white'
+                : 'black-60'} `}
             >
-              + Follow
+              {this.props.cat.isFollowed ? 'Following' : '+ Follow'}
             </button>
           </form>
         </div>
@@ -46,6 +50,7 @@ export default createFragmentContainer(
       nickname
       fullName
       imageUrl
+      isFollowed
     }
   `
 );

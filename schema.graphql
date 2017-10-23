@@ -2,6 +2,7 @@ type Cat implements Node {
   fullName: String
   id: ID!
   imageUrl: String!
+  isFollowed: Boolean
   nickname: String!
 }
 
@@ -152,6 +153,10 @@ input CatFilter {
 
   # All values not ending with the given string.
   imageUrl_not_ends_with: String
+  isFollowed: Boolean
+
+  # All values that are not equal to given value.
+  isFollowed_not: Boolean
   nickname: String
 
   # All values that are not equal to given value.
@@ -201,6 +206,8 @@ enum CatOrderBy {
   id_DESC
   imageUrl_ASC
   imageUrl_DESC
+  isFollowed_ASC
+  isFollowed_DESC
   nickname_ASC
   nickname_DESC
 }
@@ -208,12 +215,14 @@ enum CatOrderBy {
 input CreateCat {
   fullName: String
   imageUrl: String!
+  isFollowed: Boolean
   nickname: String!
 }
 
 input CreateCatInput {
   fullName: String
   imageUrl: String!
+  isFollowed: Boolean
   nickname: String!
   clientMutationId: String!
 }
@@ -668,6 +677,7 @@ input UpdateCat {
   fullName: String
   id: ID!
   imageUrl: String
+  isFollowed: Boolean
   nickname: String
 }
 
@@ -675,6 +685,7 @@ input UpdateCatInput {
   fullName: String
   id: ID!
   imageUrl: String
+  isFollowed: Boolean
   nickname: String
   clientMutationId: String!
 }
