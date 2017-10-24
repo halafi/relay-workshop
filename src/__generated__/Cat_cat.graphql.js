@@ -13,6 +13,7 @@ export type Cat_cat = {|
   +nickname: string;
   +fullName: ?string;
   +imageUrl: string;
+  +isShwifty: ?boolean;
 |};
 */
 
@@ -49,6 +50,13 @@ const fragment /*: ConcreteFragment*/ = {
       "alias": null,
       "args": null,
       "name": "imageUrl",
+      "storageKey": null
+    },
+    {
+      "kind": "ScalarField",
+      "alias": null,
+      "args": null,
+      "name": "isShwifty",
       "storageKey": null
     }
   ],

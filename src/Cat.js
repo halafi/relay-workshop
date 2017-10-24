@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 import { createFragmentContainer, graphql } from 'react-relay';
 
-class Cat extends React.Component {
+class Cat extends Component {
   render() {
     return (
       <article className="dt w-100 bb b--black-05 pb2 mt2" href="#0">
@@ -46,6 +46,7 @@ export default createFragmentContainer(
       nickname
       fullName
       imageUrl
+      isShwifty
     }
   `
 );

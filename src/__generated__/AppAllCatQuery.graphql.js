@@ -1,6 +1,6 @@
 /**
  * @flow
- * @relayHash b19f601a95ff49caed5afaeeea625901
+ * @relayHash e804d4b099118f035f8474631cceb0f1
  */
 
 /* eslint-disable */
@@ -10,7 +10,9 @@
 /*::
 import type {ConcreteBatch} from 'relay-runtime';
 export type AppAllCatQueryResponse = {|
-  +viewer: {| |};
+  +viewer: {|
+    +id: string;
+  |};
 |};
 */
 
@@ -18,8 +20,8 @@ export type AppAllCatQueryResponse = {|
 /*
 query AppAllCatQuery {
   viewer {
-    ...CatList_viewer
     id
+    ...CatList_viewer
   }
 }
 
@@ -52,6 +54,7 @@ fragment Cat_cat on Cat {
   nickname
   fullName
   imageUrl
+  isShwifty
 }
 */
 
@@ -70,6 +73,13 @@ const batch /*: ConcreteBatch*/ = {
         "name": "viewer",
         "plural": false,
         "selections": [
+          {
+            "kind": "ScalarField",
+            "alias": null,
+            "args": null,
+            "name": "id",
+            "storageKey": null
+          },
           {
             "kind": "FragmentSpread",
             "name": "CatList_viewer",
@@ -171,6 +181,13 @@ const batch /*: ConcreteBatch*/ = {
                                 "alias": null,
                                 "args": null,
                                 "name": "imageUrl",
+                                "storageKey": null
+                              },
+                              {
+                                "kind": "ScalarField",
+                                "alias": null,
+                                "args": null,
+                                "name": "isShwifty",
                                 "storageKey": null
                               }
                             ]
@@ -274,7 +291,7 @@ const batch /*: ConcreteBatch*/ = {
       }
     ]
   },
-  "text": "query AppAllCatQuery {\n  viewer {\n    ...CatList_viewer\n    id\n  }\n}\n\nfragment CatList_viewer on Viewer {\n  allCats(last: 100) {\n    edges {\n      node {\n        ...Cat_cat\n        id\n      }\n    }\n    ... on CatConnection {\n      edges {\n        cursor\n        node {\n          __typename\n          id\n        }\n      }\n      pageInfo {\n        hasPreviousPage\n        startCursor\n      }\n    }\n  }\n}\n\nfragment Cat_cat on Cat {\n  id\n  nickname\n  fullName\n  imageUrl\n}\n"
+  "text": "query AppAllCatQuery {\n  viewer {\n    id\n    ...CatList_viewer\n  }\n}\n\nfragment CatList_viewer on Viewer {\n  allCats(last: 100) {\n    edges {\n      node {\n        ...Cat_cat\n        id\n      }\n    }\n    ... on CatConnection {\n      edges {\n        cursor\n        node {\n          __typename\n          id\n        }\n      }\n      pageInfo {\n        hasPreviousPage\n        startCursor\n      }\n    }\n  }\n}\n\nfragment Cat_cat on Cat {\n  id\n  nickname\n  fullName\n  imageUrl\n  isShwifty\n}\n"
 };
 
 module.exports = batch;
