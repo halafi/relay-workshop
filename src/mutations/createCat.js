@@ -15,7 +15,7 @@ const mutation = graphql`
           fullName
           nickname
           imageUrl
-          isFollowed
+          isShwifty
         }
       }
       clientMutationId

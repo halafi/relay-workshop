@@ -8,7 +8,7 @@ import Cat from './Cat';
 
 class CatContainer extends Component {
   toggleFollow = () => {
-    updateCat(this.props.cat.id, !this.props.cat.isFollowed);
+    updateCat(this.props.cat.id, !this.props.cat.isShwifty);
   };
   handleDelete = () => {
     deleteCat(this.props.viewerId, this.props.cat.id);
@@ -32,7 +32,7 @@ export default createFragmentContainer(
       nickname
       fullName
       imageUrl
-      isFollowed
+      isShwifty
     }
   `
 );

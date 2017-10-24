@@ -1,6 +1,6 @@
 /**
  * @flow
- * @relayHash bfa88a14c9e2c05bdfdc6ced8477a063
+ * @relayHash f2d8ee86897b105f53ce6cd64ce96966
  */
 
 /* eslint-disable */
@@ -13,7 +13,7 @@ export type createCatMutationVariables = {|
   input: {
     fullName?: ?string;
     imageUrl: string;
-    isFollowed?: ?boolean;
+    isShwifty?: ?boolean;
     nickname: string;
     clientMutationId: string;
   };
@@ -27,7 +27,7 @@ export type createCatMutationResponse = {|
         +fullName: ?string;
         +nickname: string;
         +imageUrl: string;
-        +isFollowed: ?boolean;
+        +isShwifty: ?boolean;
       |};
     |};
     +clientMutationId: string;
@@ -48,7 +48,7 @@ mutation createCatMutation(
         fullName
         nickname
         imageUrl
-        isFollowed
+        isShwifty
       }
     }
     clientMutationId
@@ -140,7 +140,7 @@ const batch /*: ConcreteBatch*/ = {
                     "kind": "ScalarField",
                     "alias": null,
                     "args": null,
-                    "name": "isFollowed",
+                    "name": "isShwifty",
                     "storageKey": null
                   }
                 ],
@@ -249,7 +249,7 @@ const batch /*: ConcreteBatch*/ = {
                     "kind": "ScalarField",
                     "alias": null,
                     "args": null,
-                    "name": "isFollowed",
+                    "name": "isShwifty",
                     "storageKey": null
                   }
                 ],
@@ -270,7 +270,7 @@ const batch /*: ConcreteBatch*/ = {
       }
     ]
   },
-  "text": "mutation createCatMutation(\n  $input: CreateCatInput!\n) {\n  createCat(input: $input) {\n    edge {\n      cursor\n      node {\n        id\n        fullName\n        nickname\n        imageUrl\n        isFollowed\n      }\n    }\n    clientMutationId\n  }\n}\n"
+  "text": "mutation createCatMutation(\n  $input: CreateCatInput!\n) {\n  createCat(input: $input) {\n    edge {\n      cursor\n      node {\n        id\n        fullName\n        nickname\n        imageUrl\n        isShwifty\n      }\n    }\n    clientMutationId\n  }\n}\n"
 };
 
 module.exports = batch;

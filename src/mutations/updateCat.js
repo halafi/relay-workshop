@@ -10,18 +10,18 @@ const mutation = graphql`
         fullName
         nickname
         imageUrl
-        isFollowed
+        isShwifty
       }
       clientMutationId
     }
   }
 `;
 
-const updateCat = (id, isFollowed) => {
+const updateCat = (id, isShwifty) => {
   const variables = {
     input: {
       id,
-      isFollowed,
+      isShwifty,
       clientMutationId: 'abcd'
     }
   };

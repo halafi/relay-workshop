@@ -1,6 +1,6 @@
 /**
  * @flow
- * @relayHash 906bf0aec5cac80eb4eee0c1cbf9c9f2
+ * @relayHash 2a3fc8bea42ef4d948aead9d47d128c6
  */
 
 /* eslint-disable */
@@ -14,7 +14,7 @@ export type updateCatMutationVariables = {|
     fullName?: ?string;
     id: string;
     imageUrl?: ?string;
-    isFollowed?: ?boolean;
+    isShwifty?: ?boolean;
     nickname?: ?string;
     clientMutationId: string;
   };
@@ -26,7 +26,7 @@ export type updateCatMutationResponse = {|
       +fullName: ?string;
       +nickname: string;
       +imageUrl: string;
-      +isFollowed: ?boolean;
+      +isShwifty: ?boolean;
     |};
     +clientMutationId: string;
   |};
@@ -44,7 +44,7 @@ mutation updateCatMutation(
       fullName
       nickname
       imageUrl
-      isFollowed
+      isShwifty
     }
     clientMutationId
   }
@@ -120,7 +120,7 @@ const batch /*: ConcreteBatch*/ = {
                 "kind": "ScalarField",
                 "alias": null,
                 "args": null,
-                "name": "isFollowed",
+                "name": "isShwifty",
                 "storageKey": null
               }
             ],
@@ -211,7 +211,7 @@ const batch /*: ConcreteBatch*/ = {
                 "kind": "ScalarField",
                 "alias": null,
                 "args": null,
-                "name": "isFollowed",
+                "name": "isShwifty",
                 "storageKey": null
               }
             ],
@@ -229,7 +229,7 @@ const batch /*: ConcreteBatch*/ = {
       }
     ]
   },
-  "text": "mutation updateCatMutation(\n  $input: UpdateCatInput!\n) {\n  updateCat(input: $input) {\n    cat {\n      id\n      fullName\n      nickname\n      imageUrl\n      isFollowed\n    }\n    clientMutationId\n  }\n}\n"
+  "text": "mutation updateCatMutation(\n  $input: UpdateCatInput!\n) {\n  updateCat(input: $input) {\n    cat {\n      id\n      fullName\n      nickname\n      imageUrl\n      isShwifty\n    }\n    clientMutationId\n  }\n}\n"
 };
 
 module.exports = batch;

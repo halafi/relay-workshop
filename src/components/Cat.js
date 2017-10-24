@@ -17,13 +17,13 @@ const Cat = ({ cat, toggleFollow, handleDelete }) => (
       <div className="w-100 tr">
         <button
           onClick={toggleFollow}
-          className={`f6 button-reset ${cat.isFollowed
+          className={`f6 button-reset ${cat.isShwifty
             ? 'bg-blue'
-            : 'bg-white'} ba b--black-10 dim pointer pv1 ${cat.isFollowed
+            : 'bg-white'} ba b--black-10 dim pointer pv1 ${cat.isShwifty
             ? 'white'
             : 'black-60'} `}
         >
-          {cat.isFollowed ? 'Following' : '+ Follow'}
+          {cat.isShwifty ? 'Shwifty' : 'Get Shwifty'}
         </button>{' '}
         <button
           onClick={handleDelete}

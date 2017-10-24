@@ -13,7 +13,7 @@ export type CatContainer_cat = {|
   +nickname: string;
   +fullName: ?string;
   +imageUrl: string;
-  +isFollowed: ?boolean;
+  +isShwifty: ?boolean;
 |};
 */
 
@@ -56,7 +56,7 @@ const fragment /*: ConcreteFragment*/ = {
       "kind": "ScalarField",
       "alias": null,
       "args": null,
-      "name": "isFollowed",
+      "name": "isShwifty",
       "storageKey": null
     }
   ],

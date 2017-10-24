@@ -1,6 +1,6 @@
 /**
  * @flow
- * @relayHash bbc9f803943fe59b04e9c10c5e2e30ac
+ * @relayHash 920aa4098affb40738341a39df3ddf19
  */
 
 /* eslint-disable */
@@ -58,7 +58,7 @@ fragment CatContainer_cat on Cat {
   nickname
   fullName
   imageUrl
-  isFollowed
+  isShwifty
 }
 */
 
@@ -223,7 +223,7 @@ const batch /*: ConcreteBatch*/ = {
                                 "kind": "ScalarField",
                                 "alias": null,
                                 "args": null,
-                                "name": "isFollowed",
+                                "name": "isShwifty",
                                 "storageKey": null
                               }
                             ]
@@ -333,7 +333,7 @@ const batch /*: ConcreteBatch*/ = {
       }
     ]
   },
-  "text": "query CatListPaginationQuery(\n  $count: Int!\n  $cursor: String\n) {\n  viewer {\n    id\n    ...CatList_viewer\n  }\n}\n\nfragment CatList_viewer on Viewer {\n  id\n  allCats(first: $count, after: $cursor) {\n    edges {\n      node {\n        ...CatContainer_cat\n        id\n      }\n    }\n    ... on CatConnection {\n      edges {\n        cursor\n        node {\n          __typename\n          id\n        }\n      }\n      pageInfo {\n        endCursor\n        hasNextPage\n      }\n    }\n  }\n}\n\nfragment CatContainer_cat on Cat {\n  id\n  nickname\n  fullName\n  imageUrl\n  isFollowed\n}\n"
+  "text": "query CatListPaginationQuery(\n  $count: Int!\n  $cursor: String\n) {\n  viewer {\n    id\n    ...CatList_viewer\n  }\n}\n\nfragment CatList_viewer on Viewer {\n  id\n  allCats(first: $count, after: $cursor) {\n    edges {\n      node {\n        ...CatContainer_cat\n        id\n      }\n    }\n    ... on CatConnection {\n      edges {\n        cursor\n        node {\n          __typename\n          id\n        }\n      }\n      pageInfo {\n        endCursor\n        hasNextPage\n      }\n    }\n  }\n}\n\nfragment CatContainer_cat on Cat {\n  id\n  nickname\n  fullName\n  imageUrl\n  isShwifty\n}\n"
 };
 
 module.exports = batch;
