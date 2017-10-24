@@ -3,8 +3,6 @@ import { ConnectionHandler } from 'relay-runtime';
 
 import environment from '../Environment';
 
-let tempID = 0;
-
 const mutation = graphql`
   mutation createCatMutation($input: CreateCatInput!) {
     createCat(input: $input) {
